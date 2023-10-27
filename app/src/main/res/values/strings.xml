@@ -3,4 +3,29 @@
     <string name="app_name">SublyAppV04</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="header_Home">BIENVENIDO A SUBLY APP</string>
+    <string name="nuestraH">Nuestra Historia</string>
+    <string name="historia">
+    En 2016, María, una apasionada diseñadora
+        gráfica,\n decidió convertir su amor por el
+        arte  y la creatividad en un negocio.\n\n
+
+    Comenzó a experimentar con la sublimación,
+        una \n técnica que le permitía imprimir sus
+        diseños \n en una variedad  de productos,
+        desde tazas \n y camisetas hasta fundas de
+        teléfono y almohadas.María entendió que la
+        personalización  era la clave  para destacarse
+        en un mercado  competitivo.\n \n
+
+
+    La empresa se encuentra en el garaje
+        de María. \n María cuenta con una
+        impresora  de sublimación y \n una prensa de calor,
+        en la que  crea muestras \n de productos
+        únicos y de alta  calidad que posteriormente
+        son distribuidos a sus clientes.
+</string>
+
+
 </resources>

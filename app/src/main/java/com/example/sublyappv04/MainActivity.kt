@@ -3,6 +3,8 @@ package com.example.sublyappv04
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.widget.Toolbar
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -36,6 +38,22 @@ class MainActivity : AppCompatActivity() {lateinit var navegation: BottomNavigat
                 }
                 return@OnNavigationItemSelectedListener true
             }
+            R.id.itemFramentPosillos -> {
+                supportFragmentManager.commit {
+                    replace<PosillosFragment>(R.id.frameContainer) //contenedor del main.xml
+                    setReorderingAllowed(true)
+                    addToBackStack("replacement")
+                }
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.itemFramentPedido -> {
+                supportFragmentManager.commit {
+                    replace<PedidoFragment>(R.id.frameContainer) //contenedor del main.xml
+                    setReorderingAllowed(true)
+                    addToBackStack("replacement")
+                }
+                return@OnNavigationItemSelectedListener true
+            }
         }
 
         false }
@@ -52,4 +70,6 @@ class MainActivity : AppCompatActivity() {lateinit var navegation: BottomNavigat
             addToBackStack("replacement")
         }
     }
+
+
 }
