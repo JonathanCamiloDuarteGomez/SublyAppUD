@@ -10,7 +10,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.Spinner
+import android.widget.TableRow
+import android.widget.TextView
+import androidx.core.view.get
 import android.view.ViewGroup as ViewGroup1
 
 // TODO: Rename parameter arguments, choose names that match
@@ -19,6 +24,7 @@ private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 private var selectedColor: String? = null
 private var selectedMaterial: String? = null
+private var selectedTallaa: String? = null
 
 /**
  * A simple [Fragment] subclass.
@@ -51,6 +57,13 @@ class CamisasFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_camisas, container, false)
 
+
+
+        // Inflar la vista de casillas_fila y agregar+la a la vista actual
+        val inflaterFilasTablaCamisas = LayoutInflater.from(requireContext()).inflate(R.layout.casillas_fila, null)
+        val filaCasillaContainer = view.findViewById<LinearLayout>(R.id.filaCasillaSpinner)
+        filaCasillaContainer.addView(inflaterFilasTablaCamisas)
+        //val spinnerView =
         // Llamar a la función crearSpinner para agregar un nuevo Spinner al diseño
         val colores = listOf("Color de fondo", "Blanco", "Negro", "Azul", "Verde", "Rosado", "Naranja")
         crearSpinner(requireContext(), view, colores, R.id.spinnerColores) { selectedOption ->
@@ -61,6 +74,13 @@ class CamisasFragment : Fragment() {
 
         val listaMateriales = listOf("Seleccione Material","Algodón", "Poliéster", "Algodón-Poliéster")
         crearSpinner(requireContext(), view, listaMateriales, R.id.spinneMaterialCamisa) { selectedOption ->
+            Log.d("opc", selectedOption)
+            selectedMaterial = selectedOption
+            Log.d("opc", "Guardado$selectedMaterial")
+        }
+
+        val listaTallas = listOf("Seleccione Talla","S", "M", "L","XL")
+        crearSpinner(requireContext(), view, listaMateriales, R.id.spinneTallaCamisa) { selectedOption ->
             Log.d("opc", selectedOption)
             selectedMaterial = selectedOption
             Log.d("opc", "Guardado$selectedMaterial")
